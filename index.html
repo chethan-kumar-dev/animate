@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>particles.js</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"  href="css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+  <style>
+      #display-element{
+        position: absolute;
+      }
+      #div-holder{
+          border-left: 2px solid black;
+          margin-left: 20px;
+          margin-top: 20px;
+          padding: 10px;
+         
+      }
+       .cards{
+            width: 96%;
+            height: auto;
+            margin: 10px;
+            border-radius: 40px;
+            padding: 15px;
+            box-sizing: border-box;
+            color: white;
+            transition: 2s linear width;
+            line-height: 25px;
+            font-size: 18px;
+            font-family: 'News Cycle', sans-serif;
+            letter-spacing: 1px;
+            text-align: justify;
+               }
+        .cards::before{
+            content: '';
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: orange;
+            display: inline-block;
+            border: 4px dashed black;
+            position: relative;
+            left: -46px;
+            animation: roundItem 2s linear infinite;
+        } 
+        @keyframes roundItem{
+            100%{transform: rotateZ(360deg);}
+        }
+        .header-section{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            position: sticky;
+            top: 0px;
+            width: 99%;
+            height: 30px;
+            background-color: rgb(35, 25, 92);
+            padding: 6px;
+            z-index: 1;
+        }
+        #header{
+            color:white;
+            font-size: 20px;
+            padding-top: 6px;
+        }
+        .btn-section{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           margin-top:8px;
+        }
+        .btn{
+            border-radius: 30px;
+            border: none;
+            background:linear-gradient(100deg,rgb(35, 25, 92) 70%,rgb(117, 15, 131)) ;
+            color: white;
+            padding: 6px;
+        }
+  </style>
+</head>
+<body>
+<!-- count particles -->
+<!-- particles.js container -->
+<div id="particles-js">
+</div>
+<div id="display-element">
+    <div class="header-section">
+        <h1 id="header">TODAY'S TOP HEADLINES</h1>
+    </div>
+    <div id="div-holder">
+        <div class="cards">Today, Chidambaram and other Congress leaders may stand in support of 
+            Urban Naxals. However, as country’s Union Home Minister, P. Chidambaram was vocal
+             about Maoists getting media and intellectual support during the UPA rule. 
+             <div class="btn-section">
+                <a href="https://jansatyagrah.in/national-integrity/mans-workers-naxal-links/" class="btn">read more</a>
+             </div>
+        </div>
+        <div class="cards">Prime Minister Narendra Modi often talks about development and claims to be 
+            the angel of change. However, people from Navi Mumbai’s
+             Nhava Sheva have a different tale about PM Narendra Modi’s promises to share.
+             <div class="btn-section">
+                <a href="https://jansatyagrah.in/prime-story/jnpt-land-scam-farmers-modi/" class="btn">read more</a>
+             </div>
+        </div>
+        <div class="cards">
+            Nirav Modi scam is being looked upon as India’s biggest bank fraud. Both, Congress 
+            as well as the BJP are busy blaming each other while the common man is feeling 
+            bemused due to some unusual claims made by the country’s investigative agencies.
+            <div class="btn-section">
+                <a href="https://jansatyagrah.in/opinion/supreme-court-judges-press-conference/" class="btn">read more</a>
+             </div>
+        </div>
+        <div class="cards">
+            As we are approaching the ending of the year 2017, the politics of ‘Bhima Koregaon 
+            Battle‘ is heating up. As 2017 marks the 200th anniversary of the battle, ultra-leftist forces 
+            are leading the campaign.
+            <div class="btn-section">
+                <a href="https://jansatyagrah.in/prime-story/bhima-koregaon-event-hijacked-for-hatred/" class="btn">read more</a>
+             </div>
+        </div>
+        <div class="cards">
+            Pune is referred as Maharashtra’s cultural capital and “IT City” as it is
+             home to offices of world’s top IT companies.  Still, most of the public transport buses in this city do not follow their timetable,
+             and some of the drivers as well as conductors are incredibly arrogant.
+             <div class="btn-section">
+                <a href="https://jansatyagrah.in/prime-story/pmpml-buses-killing-people/" class="btn">read more</a>
+             </div>
+        </div>
+        <div class="cards">
+            On Monday, November 6, 2017, Prime Minister Narendra Modi visited Chennai 
+            and interacted with people during ‘Dina Thanthi’ Tamil Daily’s 75th-anniversary
+             celebration event held at Chennai’s Madras University Centenary Hall.
+             <div class="btn-section">
+                <a href="https://jansatyagrah.in/opinion/narendra-modi-speech-chennai-rebuttal-raj-kamal-jha-criticism/" class="btn">read more</a>
+             </div>
+        </div>
+        <div class="cards">
+            It is an absolute wonder how animal sanctuaries and animal rescuers are working 
+            their way up to create a safe world for the animals. Through donations, buying from
+             auctions, rescuing from slaughterhouses these Kind beings
+             have pulled their sweat and blood together to give shelter to more animals.
+             <div class="btn-section">
+                <a href="https://jansatyagrah.in/opinion/vegan-against-animal-cruelty/" class="btn">read more</a>
+             </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- scripts -->
+<script src="/animationwebsite/particles.js"></script>
+<script src="/animationwebsite/app.js"></script>
+
+<!-- stats.js -->
+<script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
+
+</body>
+</html>
